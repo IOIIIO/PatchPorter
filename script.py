@@ -105,7 +105,7 @@ class tool:
             self.u.grab("Press [enter] to return...")
             self._get_plist()
     
-    def _debug(self):
+    def _debug(self): #Hidden debug functionality
         try:
             self.u.head("Debug data!")
             print("")
@@ -114,8 +114,25 @@ class tool:
             print("self.plist_data\n")
 
             for Comment in self.plist_data["KernelAndKextPatches"]["KernelToPatch"]:
-                print([Comment])
-            print("yee\n")
+                #print([Comment])        
+                #print("")
+                #print([Comment][0])
+                print("")
+                print("Comment:")
+                print([Comment][0]["Comment"])
+                print("")
+                print("Disabled:")
+                print([Comment][0]["Disabled"])
+                print("")
+                print("Find:")
+                print([Comment][0]["Find"])
+                print("")
+                print("MatchOS:")
+                print([Comment][0]["MatchOS"])
+                print("")
+                print("Replace:")
+                print([Comment][0]["Replace"])
+                print("")
             print("")
             self.u.grab("Press [enter] to return...")
         except Exception as e:
